@@ -3,5 +3,6 @@
         "module": "commonjs",
         "resolveJsonModule": true,
         "esModuleInterop": true
+        
     }
 }

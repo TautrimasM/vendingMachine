@@ -64,11 +64,7 @@ const logChange = (change: Coin[]) => {
   changeText = changeText + ".";
   console.log(changeText);
 };
-export const vendingMachine = (
-  priceInCents: number,
-  coinsInserted: Coin[],
-  coinsInMachine: Coin[]
-) => {
+export const vendingMachine = (priceInCents: number, coinsInserted: Coin[]) => {
   insertCoinsIntoMachine(coinsInserted);
   const sumInserted = calculateSum(coinsInserted);
   const changeInCents = sumInserted - priceInCents;
