@@ -67,6 +67,15 @@ const logChange = (change: Coin[]) => {
 export const vendingMachine = (priceInCents: number, coinsInserted: Coin[]) => {
   insertCoinsIntoMachine(coinsInserted);
   const sumInserted = calculateSum(coinsInserted);
+
+  if (sumInserted < priceInCents) {
+    console.log("You have not inserted enough money.");
+    return;
+  } else if (sumInserted === priceInCents) {
+    console.log("You have inserted right ammount of money, no change needed");
+    return;
+  }
+
   const changeInCents = sumInserted - priceInCents;
   const change = calculateChangeInCoins(changeInCents, coinsInMachine);
   logChange(change);

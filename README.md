@@ -4,19 +4,27 @@ Program that calculates amount and values of coins needed to be returned as a ch
 
 ## Usage
 
-Coin ammount in the machine in start of the day is set in file src/machineSet.json
+Coin ammount in the machine start of the day is set in file src/machineSet.json
 
-You can set price of product and inserted coins in index.ts file and then start program.
+If the sum of coins inserted is greater than the price, it will print "Your change is: (number of coins) x (denomination of coin), ... ." and return array of returned coins
 
-It prints to console a nice text of how many and what coins it returns.
+If the sum of coins inserted is less than the price, it will print "You have not inserted enough money." and return undefined.
 
-It also returns an array containing returned coins.
+If the sum of coins inserted is equal to the price, it will print "You have inserted enough money, no change needed." and return undefined.
 
 - Start program
 
 ```
-npm start
+npm start <priceInCents> <coin1> <coin2> ... <coinN>
 ```
+
+Example:
+
+```
+npm start 86 50 20 20
+```
+
+Prints out "Your change is: 2 x 2ct."
 
 You can run tests by:
 
@@ -28,6 +36,4 @@ npm test
 
 Main function and logic is in src/vendingMachine.ts file
 
-Input is price in cents, array of inserted coins and initial coins that a machine has at the begining.
-
-Default coin ammount set is in the machineSet.json file
+Input is price in cents, array of inserted coins and initial coins that the machine has at the begining.

@@ -24,4 +24,14 @@ describe("testing vending machne", () => {
       { num: 1, val: 5 },
     ]);
   });
+  test("expected otput is  undefined", () => {
+    const priceInCents = 25;
+    const coinsInserted = [{ num: 1, val: 20 }];
+    expect(vendingMachine(priceInCents, coinsInserted)).toBe(undefined);
+  });
+  test("expected otput is  undefined", () => {
+    const priceInCents = 40;
+    const coinsInserted = [{ num: 2, val: 20 }];
+    expect(vendingMachine(priceInCents, coinsInserted)).toBe(undefined);
+  });
 });
